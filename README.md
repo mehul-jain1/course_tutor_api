@@ -6,19 +6,38 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+  * `2.7.4`
 
-* System dependencies
+* Rails version
+  * `6.0.0`
+ 
+* Running instructions
+  * `rake db:setup`
+  * `rails s`
 
-* Configuration
 
-* Database creation
+* API endpoints
+  * `GET localhost:3000/courses`
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  * `POST localhost:3000/courses
+      {
+        "name": "course1",
+        "description": "course description",
+        "tutors_attributes": [
+          {
+            "name": "tutor 1"
+          },
+          {
+            "name": "tutor 2"
+          }
+        ]
+      }
+     `
+     
+  * `PUT localhost:3000/courses
+      {
+        "id": 1
+        "name": "course1",
+        "description": "course description",
+      }
+  `
