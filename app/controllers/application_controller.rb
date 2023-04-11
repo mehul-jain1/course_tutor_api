@@ -4,6 +4,6 @@ class ApplicationController < ActionController::API
   private
 
   def render_parameter_missing_error(exception)
-    render json: { error: exception.message }, status: :unprocessable_entity
+    render json: { errors: exception.message }, status: :unprocessable_entity
   end
 end

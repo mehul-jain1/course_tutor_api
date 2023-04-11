@@ -30,7 +30,20 @@ RSpec.describe 'Courses API', type: :request do
         post '/courses', params: {}
 
         expect(response).to have_http_status(:unprocessable_entity)
-        expect(json['error']).not_to be_empty
+        expect(json['errors']).not_to be_empty
+      end
+    end
+
+    context 'with missing parameters' do
+      it 'returns an error message' do
+        post '/courses', params: {
+          course: {
+            name: '',
+            description: ''
+          }
+        }
+        expect(response).to have_http_status(:unprocessable_entity)
+        expect(json['errors']).not_to be_empty
       end
     end
   end
