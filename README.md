@@ -43,3 +43,6 @@ Things you may want to cover:
         "description": "course description",
       }
       ```
+      
+  * Running tests
+    * `bin/rake`
