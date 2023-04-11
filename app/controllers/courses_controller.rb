@@ -16,7 +16,7 @@ class CoursesController < ApplicationController
     @course = Course.new(course_params)
 
     if @course.save
-      render json: @course, status: :created, location: @course
+      render json: @course, include: :tutors, status: :created, location: @course
     else
       render json: {errors: @course.errors}, status: :unprocessable_entity
     end
@@ -25,7 +25,7 @@ class CoursesController < ApplicationController
   # PATCH/PUT /courses/1
   def update
     if @course.update(course_params)
-      render json: @course
+      render json: @course, include: :tutors, location: @course
     else
       render json: {errors: @course.errors}, status: :unprocessable_entity
     end
@@ -43,6 +43,6 @@ class CoursesController < ApplicationController
     end
 
   def course_params
-    params.require(:course).permit(:name, :description, tutors_attributes: [:name])
+    params.require(:course).permit(:name, :description, tutors_attributes: [:id, :name])
   end
 end
