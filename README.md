@@ -19,7 +19,8 @@ Things you may want to cover:
 * API endpoints
   * `GET localhost:3000/courses`
 
-  * `POST localhost:3000/courses
+  * `POST localhost:3000/courses`
+    ```
       {
         "name": "course1",
         "description": "course description",
@@ -32,12 +33,13 @@ Things you may want to cover:
           }
         ]
       }
-     `
+     ```
      
-  * `PUT localhost:3000/courses
+  * `PUT localhost:3000/courses`
+      ```
       {
         "id": 1
         "name": "course1",
         "description": "course description",
       }
-  `
+      ```
