@@ -9,7 +9,7 @@ Things you may want to cover:
   * `2.7.4`
 
 * Rails version
-  * `6.0.0`
+  * `7.0.4`
  
 * Running instructions
   * `rake db:setup`
